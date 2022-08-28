@@ -1,0 +1,710 @@
+2022-08-28 17:28:54.548 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 17:28:54.564 +04:00 [INF] Hosting environment: Development
+2022-08-28 17:28:54.565 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 17:28:54.566 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:2851/weatherforecast  
+2022-08-28 17:28:54.624 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 17:28:54.644 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 17:28:54.651 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 17:28:54.684 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 32.8834ms
+2022-08-28 17:28:54.685 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 17:28:54.688 +04:00 [INF] Request finished in 126.8093ms 200 application/json; charset=utf-8
+2022-08-28 17:28:58.605 +04:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:2851/api/productcategory/delete?id=10  
+2022-08-28 17:28:58.607 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductCategoryController.DeleteProductCategory (PashaLifeProject)'
+2022-08-28 17:28:58.629 +04:00 [INF] Route matched with {action = "DeleteProductCategory", controller = "ProductCategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiResponse] DeleteProductCategory(Int32) on controller PashaLifeProject.Controllers.ProductCategoryController (PashaLifeProject).
+2022-08-28 17:28:59.303 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 17:28:59.337 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 17:28:59.875 +04:00 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[CategoryID], [p].[CategoryName]
+FROM [ProductCategories] AS [p]
+WHERE [p].[CategoryID] = @__id_0
+2022-08-28 17:28:59.903 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductCategoryController.DeleteProductCategory (PashaLifeProject) in 1273.1986ms
+2022-08-28 17:28:59.903 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductCategoryController.DeleteProductCategory (PashaLifeProject)'
+2022-08-28 17:28:59.942 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_category_not_found
+   at PashaLifeProject.Repo.Concrete.ProductCategoryRepo.GetByIdAsync(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductCategoryRepo.cs:line 54
+   at PashaLifeProject.Service.Concrete.ProductCategoryService.DeleteProductCategory(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductCategoryService.cs:line 31
+   at PashaLifeProject.Controllers.ProductCategoryController.DeleteProductCategory(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductCategoryController.cs:line 43
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 17:29:00.081 +04:00 [INF] Request finished in 1476.2486ms 200 application/json
+2022-08-28 19:32:30.606 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:32:30.614 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:32:30.615 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:32:30.617 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:2851/weatherforecast  
+2022-08-28 19:32:30.649 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:32:30.661 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:32:30.665 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:32:30.683 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 18.0089ms
+2022-08-28 19:32:30.683 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:32:30.685 +04:00 [INF] Request finished in 71.1748ms 200 application/json; charset=utf-8
+2022-08-28 19:35:37.158 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:35:37.166 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:35:37.167 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:35:37.168 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:2851/weatherforecast  
+2022-08-28 19:35:37.199 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:35:37.212 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:35:37.215 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:35:37.233 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 18.0638ms
+2022-08-28 19:35:37.234 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:35:37.236 +04:00 [INF] Request finished in 69.9112ms 200 application/json; charset=utf-8
+2022-08-28 19:36:04.396 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:2851/weatherforecast  
+2022-08-28 19:36:04.400 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:36:04.401 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:36:04.401 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:36:04.402 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 1.0942ms
+2022-08-28 19:36:04.402 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:36:04.402 +04:00 [INF] Request finished in 6.0425ms 200 application/json; charset=utf-8
+2022-08-28 19:36:13.160 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:36:13.170 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:36:13.170 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:36:13.175 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:2851/weatherforecast  
+2022-08-28 19:36:13.232 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:36:13.250 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:36:13.255 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:36:13.288 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 34.416ms
+2022-08-28 19:36:13.289 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:36:13.292 +04:00 [INF] Request finished in 121.7706ms 200 application/json; charset=utf-8
+2022-08-28 19:37:53.678 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:37:53.686 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:37:53.687 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:37:53.689 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:37:53.720 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:37:53.732 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:37:53.736 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:37:53.757 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 21.1735ms
+2022-08-28 19:37:53.758 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:37:53.760 +04:00 [INF] Request finished in 73.9052ms 200 application/json; charset=utf-8
+2022-08-28 19:37:53.781 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/favicon.ico  
+2022-08-28 19:37:53.783 +04:00 [INF] Request finished in 1.982ms 404 
+2022-08-28 19:38:14.173 +04:00 [INF] Application is shutting down...
+2022-08-28 19:38:30.665 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:38:30.673 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:38:30.674 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:38:30.676 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:38:30.709 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:38:30.723 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:38:30.726 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:38:30.745 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 18.5995ms
+2022-08-28 19:38:30.746 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:38:30.748 +04:00 [INF] Request finished in 74.6453ms 200 application/json; charset=utf-8
+2022-08-28 19:38:33.316 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:38:33.320 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:38:33.320 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:38:33.321 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:38:33.322 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 1.0437ms
+2022-08-28 19:38:33.322 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:38:33.322 +04:00 [INF] Request finished in 5.9416ms 200 application/json; charset=utf-8
+2022-08-28 19:55:23.692 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:55:23.706 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:55:23.707 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:55:23.708 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:55:23.771 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:55:23.797 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:55:23.807 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:55:23.870 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 68.4117ms
+2022-08-28 19:55:23.872 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:55:23.878 +04:00 [INF] Request finished in 172.7827ms 200 application/json; charset=utf-8
+2022-08-28 19:55:23.928 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/favicon.ico  
+2022-08-28 19:55:23.933 +04:00 [INF] Request finished in 4.844ms 404 
+2022-08-28 19:56:24.412 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:56:24.428 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:56:24.429 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:56:24.437 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:56:24.504 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:56:24.528 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:56:24.537 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:56:24.580 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 46.0401ms
+2022-08-28 19:56:24.582 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:56:24.587 +04:00 [INF] Request finished in 155.7221ms 200 application/json; charset=utf-8
+2022-08-28 19:56:24.615 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/favicon.ico  
+2022-08-28 19:56:24.618 +04:00 [INF] Request finished in 3.0637ms 404 
+2022-08-28 19:57:38.398 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:57:38.413 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:57:38.414 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:57:38.416 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:57:38.474 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:57:38.500 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:57:38.506 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:57:38.535 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 28.606ms
+2022-08-28 19:57:38.537 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:57:38.540 +04:00 [INF] Request finished in 127.9009ms 200 application/json; charset=utf-8
+2022-08-28 19:57:38.578 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/favicon.ico  
+2022-08-28 19:57:38.582 +04:00 [INF] Request finished in 4.1004ms 404 
+2022-08-28 19:57:45.655 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 19:57:45.670 +04:00 [INF] Hosting environment: Development
+2022-08-28 19:57:45.671 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 19:57:45.677 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 19:57:45.746 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:57:45.774 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 19:57:45.785 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 19:57:45.834 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 51.8283ms
+2022-08-28 19:57:45.837 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 19:57:45.844 +04:00 [INF] Request finished in 171.1831ms 200 application/json; charset=utf-8
+2022-08-28 19:58:05.595 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=1  
+2022-08-28 19:58:05.598 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 19:58:05.623 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 19:58:06.806 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 19:58:06.854 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 19:58:08.268 +04:00 [INF] Executed DbCommand (87ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 19:58:08.447 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 2824.1264ms
+2022-08-28 19:58:08.448 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 19:58:08.797 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 19:58:09.132 +04:00 [INF] Request finished in 3537.3195ms 200 application/json
+2022-08-28 20:13:21.533 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 20:13:21.546 +04:00 [INF] Hosting environment: Development
+2022-08-28 20:13:21.547 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 20:13:21.553 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 20:13:21.622 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:13:21.643 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 20:13:21.649 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 20:13:21.700 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 52.8926ms
+2022-08-28 20:13:21.702 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:13:21.706 +04:00 [INF] Request finished in 158.7992ms 200 application/json; charset=utf-8
+2022-08-28 20:13:21.764 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/favicon.ico  
+2022-08-28 20:13:21.767 +04:00 [INF] Request finished in 2.4558ms 404 
+2022-08-28 20:13:38.330 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=1  
+2022-08-28 20:13:38.332 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:13:38.357 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 20:13:39.400 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 20:13:39.432 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 20:13:40.694 +04:00 [INF] Executed DbCommand (85ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 20:13:40.872 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 2514.0053ms
+2022-08-28 20:13:40.875 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:13:41.294 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 20:13:41.604 +04:00 [INF] Request finished in 3274.332ms 200 application/json
+2022-08-28 20:17:54.854 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 20:17:54.869 +04:00 [INF] Hosting environment: Development
+2022-08-28 20:17:54.870 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 20:17:54.872 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 20:17:54.936 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:17:54.956 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 20:17:54.961 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 20:17:54.992 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 30.4729ms
+2022-08-28 20:17:54.993 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:17:54.997 +04:00 [INF] Request finished in 129.542ms 200 application/json; charset=utf-8
+2022-08-28 20:18:17.382 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/productcategory/getall  
+2022-08-28 20:18:17.385 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductCategoryController.GetAllCategories (PashaLifeProject)'
+2022-08-28 20:18:17.398 +04:00 [INF] Route matched with {action = "GetAllCategories", controller = "ProductCategory"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[System.Collections.Generic.List`1[PashaLifeProject.Dto.ProductCategoryDto.ResponseDto.ProductCategoryResponseDto]]] GetAllCategories() on controller PashaLifeProject.Controllers.ProductCategoryController (PashaLifeProject).
+2022-08-28 20:18:18.075 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 20:18:18.109 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 20:18:18.596 +04:00 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[CategoryID], [p].[CategoryName]
+FROM [ProductCategories] AS [p]
+2022-08-28 20:18:18.670 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[System.Collections.Generic.List`1[[PashaLifeProject.Dto.ProductCategoryDto.ResponseDto.ProductCategoryResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-08-28 20:18:18.677 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductCategoryController.GetAllCategories (PashaLifeProject) in 1278.9285ms
+2022-08-28 20:18:18.677 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductCategoryController.GetAllCategories (PashaLifeProject)'
+2022-08-28 20:18:18.684 +04:00 [INF] Request finished in 1302.4286ms 200 application/json; charset=utf-8
+2022-08-28 20:21:37.395 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 20:21:37.415 +04:00 [INF] Hosting environment: Development
+2022-08-28 20:21:37.417 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 20:21:37.421 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 20:21:37.489 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:21:37.513 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 20:21:37.520 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 20:21:37.563 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 42.7499ms
+2022-08-28 20:21:37.566 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:21:37.570 +04:00 [INF] Request finished in 154.8729ms 200 application/json; charset=utf-8
+2022-08-28 20:21:53.870 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=1  
+2022-08-28 20:21:53.873 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:21:53.897 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 20:21:54.606 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 20:21:54.641 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 20:21:55.448 +04:00 [INF] Executed DbCommand (73ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 20:21:55.631 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 1733.7502ms
+2022-08-28 20:21:55.632 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:21:55.923 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 20:21:56.109 +04:00 [INF] Request finished in 2238.9484ms 200 application/json
+2022-08-28 20:40:31.293 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 20:40:31.307 +04:00 [INF] Hosting environment: Development
+2022-08-28 20:40:31.308 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 20:40:31.310 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 20:40:31.367 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:40:31.392 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 20:40:31.397 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 20:40:31.436 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 37.4927ms
+2022-08-28 20:40:31.437 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:40:31.441 +04:00 [INF] Request finished in 135.0348ms 200 application/json; charset=utf-8
+2022-08-28 20:41:11.993 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 20:41:12.000 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:41:12.002 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 20:41:12.003 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 20:41:12.005 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 2.5632ms
+2022-08-28 20:41:12.005 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 20:41:12.005 +04:00 [INF] Request finished in 13.1242ms 200 application/json; charset=utf-8
+2022-08-28 20:42:30.092 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=10  
+2022-08-28 20:42:30.095 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:42:30.118 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 20:42:30.765 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 20:42:30.797 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 20:42:31.437 +04:00 [INF] Executed DbCommand (73ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 20:42:31.468 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 1349.4452ms
+2022-08-28 20:42:31.469 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:42:31.493 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 20:42:31.618 +04:00 [INF] Request finished in 1525.2835ms 200 application/json
+2022-08-28 20:42:37.992 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 20:42:37.996 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:42:37.996 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 20:42:38.010 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 20:42:38.011 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 14.5687ms
+2022-08-28 20:42:38.011 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:42:38.013 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 20:42:38.014 +04:00 [INF] Request finished in 22.3035ms 200 application/json
+2022-08-28 20:42:42.907 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=3  
+2022-08-28 20:42:42.909 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:42:42.909 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 20:42:42.918 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 20:42:42.920 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 9.8465ms
+2022-08-28 20:42:42.920 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:42:42.921 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 20:42:42.924 +04:00 [INF] Request finished in 16.9529ms 200 application/json
+2022-08-28 20:45:17.457 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 20:45:17.458 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:45:17.459 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 20:45:17.465 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 20:45:17.571 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 20:45:17.579 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 120.1722ms
+2022-08-28 20:45:17.579 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 20:45:17.580 +04:00 [INF] Request finished in 123.2903ms 200 application/json; charset=utf-8
+2022-08-28 21:11:07.649 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:11:07.654 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:11:07.655 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:11:07.657 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:11:07.662 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 6.2547ms
+2022-08-28 21:11:07.663 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:11:07.663 +04:00 [INF] Request finished in 14.0796ms 200 application/json; charset=utf-8
+2022-08-28 21:22:23.343 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 21:22:23.358 +04:00 [INF] Hosting environment: Development
+2022-08-28 21:22:23.359 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 21:22:23.360 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:22:23.418 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:22:23.439 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:22:23.445 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:22:23.475 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 30.61ms
+2022-08-28 21:22:23.477 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:22:23.480 +04:00 [INF] Request finished in 123.4776ms 200 application/json; charset=utf-8
+2022-08-28 21:22:33.434 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:22:33.436 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:22:33.461 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:22:34.090 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 21:22:34.121 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 21:22:34.825 +04:00 [INF] Executed DbCommand (123ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:22:34.950 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:22:34.958 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 1496.4721ms
+2022-08-28 21:22:34.958 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:22:34.965 +04:00 [INF] Request finished in 1531.1026ms 200 application/json; charset=utf-8
+2022-08-28 21:23:01.308 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:23:01.317 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:23:01.319 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:23:01.320 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:23:01.322 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 2.63ms
+2022-08-28 21:23:01.322 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:23:01.323 +04:00 [INF] Request finished in 15.7051ms 200 application/json; charset=utf-8
+2022-08-28 21:23:47.122 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:23:47.127 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:23:47.127 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:23:47.144 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:23:47.146 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:23:47.147 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 19.9968ms
+2022-08-28 21:23:47.148 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:23:47.149 +04:00 [INF] Request finished in 27.2469ms 200 application/json; charset=utf-8
+2022-08-28 21:24:06.912 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:24:06.913 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:24:06.914 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:24:06.922 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:24:06.924 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:24:06.926 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 11.1563ms
+2022-08-28 21:24:06.926 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:24:06.927 +04:00 [INF] Request finished in 14.9083ms 200 application/json; charset=utf-8
+2022-08-28 21:24:08.605 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:24:08.605 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:24:08.607 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:24:08.615 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:24:08.618 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:24:08.620 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 12.5843ms
+2022-08-28 21:24:08.620 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:24:08.621 +04:00 [INF] Request finished in 16.4173ms 200 application/json; charset=utf-8
+2022-08-28 21:25:10.082 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 21:25:10.102 +04:00 [INF] Hosting environment: Development
+2022-08-28 21:25:10.104 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 21:25:10.106 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:25:10.183 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:25:10.208 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:25:10.214 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:25:10.264 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 50.8295ms
+2022-08-28 21:25:10.266 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:25:10.272 +04:00 [INF] Request finished in 171.7997ms 200 application/json; charset=utf-8
+2022-08-28 21:25:15.629 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:25:15.635 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:15.661 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:25:16.393 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 21:25:16.436 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 21:25:17.299 +04:00 [INF] Executed DbCommand (99ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:25:17.414 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:25:17.421 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 1760.5698ms
+2022-08-28 21:25:17.422 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:17.429 +04:00 [INF] Request finished in 1799.5984ms 200 application/json; charset=utf-8
+2022-08-28 21:25:40.598 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 21:25:40.617 +04:00 [INF] Hosting environment: Development
+2022-08-28 21:25:40.618 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 21:25:40.621 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:25:40.702 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:25:40.733 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:25:40.739 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:25:40.773 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 33.5999ms
+2022-08-28 21:25:40.774 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:25:40.779 +04:00 [INF] Request finished in 162.92ms 200 application/json; charset=utf-8
+2022-08-28 21:25:46.655 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:25:46.659 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:46.686 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:25:47.299 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 21:25:47.331 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 21:25:47.997 +04:00 [INF] Executed DbCommand (85ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:25:48.114 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:25:48.121 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 1434.165ms
+2022-08-28 21:25:48.121 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:48.131 +04:00 [INF] Request finished in 1476.1477ms 200 application/json; charset=utf-8
+2022-08-28 21:25:51.241 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:25:51.245 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:51.246 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:25:51.260 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:25:51.262 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:25:51.263 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 16.1036ms
+2022-08-28 21:25:51.263 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:51.263 +04:00 [INF] Request finished in 22.7217ms 200 application/json; charset=utf-8
+2022-08-28 21:25:52.665 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:25:52.666 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:52.667 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:25:52.677 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:25:52.679 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:25:52.681 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 13.6711ms
+2022-08-28 21:25:52.681 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:25:52.683 +04:00 [INF] Request finished in 18.0571ms 200 application/json; charset=utf-8
+2022-08-28 21:26:28.320 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:26:28.325 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:26:28.326 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:26:28.328 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:26:28.330 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 2.7214ms
+2022-08-28 21:26:28.330 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:26:28.331 +04:00 [INF] Request finished in 11.2485ms 200 application/json; charset=utf-8
+2022-08-28 21:26:32.818 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:26:32.819 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:26:32.820 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:26:32.825 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:26:32.827 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:26:32.827 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 7.5556ms
+2022-08-28 21:26:32.827 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:26:32.828 +04:00 [INF] Request finished in 10.3208ms 200 application/json; charset=utf-8
+2022-08-28 21:26:36.298 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:26:36.299 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:26:36.300 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:26:36.309 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:26:36.311 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:26:36.312 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 11.9086ms
+2022-08-28 21:26:36.312 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:26:36.313 +04:00 [INF] Request finished in 15.2389ms 200 application/json; charset=utf-8
+2022-08-28 21:26:46.838 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=3  
+2022-08-28 21:26:46.839 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:26:46.839 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:26:46.844 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:26:46.846 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 5.9765ms
+2022-08-28 21:26:46.846 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:26:46.879 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 21:26:47.014 +04:00 [INF] Request finished in 176.7473ms 200 application/json
+2022-08-28 21:33:36.374 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 21:33:36.389 +04:00 [INF] Hosting environment: Development
+2022-08-28 21:33:36.390 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject
+2022-08-28 21:33:36.392 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:33:36.445 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:33:36.471 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:33:36.477 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:33:36.513 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 36.5604ms
+2022-08-28 21:33:36.515 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:33:36.518 +04:00 [INF] Request finished in 130.8779ms 200 application/json; charset=utf-8
+2022-08-28 21:35:48.006 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:35:48.020 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:35:48.022 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:35:48.023 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:35:48.024 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 2.4882ms
+2022-08-28 21:35:48.025 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:35:48.025 +04:00 [INF] Request finished in 19.6135ms 200 application/json; charset=utf-8
+2022-08-28 21:36:03.299 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=0  
+2022-08-28 21:36:03.301 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:36:03.325 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:36:03.952 +04:00 [WRN] No type was specified for the decimal column 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2022-08-28 21:36:03.984 +04:00 [INF] Entity Framework Core 3.1.16 initialized 'PashaLifeDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 
+2022-08-28 21:36:04.646 +04:00 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:36:04.674 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 1348.6614ms
+2022-08-28 21:36:04.675 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:36:04.698 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 21:36:04.833 +04:00 [INF] Request finished in 1534.5488ms 200 application/json
+2022-08-28 21:36:17.772 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=2  
+2022-08-28 21:36:17.778 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:36:17.779 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:36:17.796 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:36:17.885 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.Response.ApiValueResponse`1[[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto, PashaLifeProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-28 21:36:17.891 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 111.4787ms
+2022-08-28 21:36:17.892 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:36:17.893 +04:00 [INF] Request finished in 120.9698ms 200 application/json; charset=utf-8
+2022-08-28 21:38:34.256 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 21:38:34.262 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:38:34.264 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 21:38:34.265 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 21:38:34.268 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 3.6067ms
+2022-08-28 21:38:34.268 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 21:38:34.269 +04:00 [INF] Request finished in 13.0749ms 200 application/json; charset=utf-8
+2022-08-28 21:38:52.492 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/api/product/getbyid?productid=3  
+2022-08-28 21:38:52.493 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:38:52.493 +04:00 [INF] Route matched with {action = "GetProductById", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeProject.Response.ApiValueResponse`1[PashaLifeProject.Dto.ProductDto.ResponseDto.ProductResponseDto]] GetProductById(Int32) on controller PashaLifeProject.Controllers.ProductController (PashaLifeProject).
+2022-08-28 21:38:52.505 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProductID], [p].[Created], [p].[IsDeleted], [p].[Price], [p].[ProductCategoryID], [p].[ProductName], [p].[State], [p0].[CategoryID], [p0].[CategoryName]
+FROM [Products] AS [p]
+INNER JOIN [ProductCategories] AS [p0] ON [p].[ProductCategoryID] = [p0].[CategoryID]
+WHERE ([p].[IsDeleted] <> CAST(1 AS bit)) AND ([p].[ProductID] = @__id_0)
+2022-08-28 21:38:52.507 +04:00 [INF] Executed action PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject) in 13.3283ms
+2022-08-28 21:38:52.507 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.ProductController.GetProductById (PashaLifeProject)'
+2022-08-28 21:38:52.508 +04:00 [ERR] PashaLifeProject.Errors.CustomError: product_not_found
+   at PashaLifeProject.Repo.Concrete.ProductRepo.GetProductById(Int32 id) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Repo\Concrete\ProductRepo.cs:line 55
+   at PashaLifeProject.Service.Concrete.ProductService.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Service\Concrete\ProductService.cs:line 69
+   at PashaLifeProject.Controllers.ProductController.GetProductById(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Controllers\ProductController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 21:38:52.511 +04:00 [INF] Request finished in 18.8496ms 200 application/json
+2022-08-28 22:03:39.498 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 22:03:39.511 +04:00 [INF] Hosting environment: Development
+2022-08-28 22:03:39.512 +04:00 [INF] Content root path: C:\Users\Majid\Desktop\StockProject\PashaLifeProject
+2022-08-28 22:03:39.519 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5961/weatherforecast  
+2022-08-28 22:03:39.587 +04:00 [INF] Executing endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 22:03:39.613 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeProject.WeatherForecast] Get() on controller PashaLifeProject.Controllers.WeatherForecastController (PashaLifeProject).
+2022-08-28 22:03:39.618 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeProject.WeatherForecast[]'.
+2022-08-28 22:03:39.654 +04:00 [INF] Executed action PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject) in 33.5222ms
+2022-08-28 22:03:39.656 +04:00 [INF] Executed endpoint 'PashaLifeProject.Controllers.WeatherForecastController.Get (PashaLifeProject)'
+2022-08-28 22:03:39.661 +04:00 [INF] Request finished in 146.0392ms 200 application/json; charset=utf-8

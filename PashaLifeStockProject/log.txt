@@ -1,0 +1,53 @@
+2022-08-28 21:38:35.386 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 21:38:35.401 +04:00 [INF] Hosting environment: Development
+2022-08-28 21:38:35.402 +04:00 [INF] Content root path: C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeStockProject
+2022-08-28 21:38:35.402 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44305/weatherforecast  
+2022-08-28 21:38:35.466 +04:00 [INF] Executing endpoint 'PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject)'
+2022-08-28 21:38:35.510 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeStockProject.WeatherForecast] Get() on controller PashaLifeStockProject.Controllers.WeatherForecastController (PashaLifeStockProject).
+2022-08-28 21:38:35.557 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeStockProject.WeatherForecast[]'.
+2022-08-28 21:38:35.591 +04:00 [INF] Executed action PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject) in 34.2622ms
+2022-08-28 21:38:35.593 +04:00 [INF] Executed endpoint 'PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject)'
+2022-08-28 21:38:35.598 +04:00 [INF] Request finished in 200.8112ms 200 application/json; charset=utf-8
+2022-08-28 21:38:52.229 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:44305/api/stock/getstock?productId=3  
+2022-08-28 21:38:52.233 +04:00 [INF] Executing endpoint 'PashaLifeStockProject.Controllers.StockController.GetStock (PashaLifeStockProject)'
+2022-08-28 21:38:52.260 +04:00 [INF] Route matched with {action = "GetStock", controller = "Stock"}. Executing controller action with signature System.Threading.Tasks.Task`1[PashaLifeStockProject.Response.ApiValueResponse`1[PashaLifeStockProject.Dto.StockResponseDto]] GetStock(Int32) on controller PashaLifeStockProject.Controllers.StockController (PashaLifeStockProject).
+2022-08-28 21:38:52.662 +04:00 [INF] Executed action PashaLifeStockProject.Controllers.StockController.GetStock (PashaLifeStockProject) in 401.3768ms
+2022-08-28 21:38:52.663 +04:00 [INF] Executed endpoint 'PashaLifeStockProject.Controllers.StockController.GetStock (PashaLifeStockProject)'
+2022-08-28 21:38:52.703 +04:00 [ERR] PashaLifeStockProject.Errors.CustomError: InvalidProductId
+   at PashaLifeStockProject.Service.Concrete.StockService.CheckProductId(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeStockProject\Service\Concrete\StockService.cs:line 59
+   at PashaLifeStockProject.Service.Concrete.StockService.GetStock(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeStockProject\Service\Concrete\StockService.cs:line 109
+   at PashaLifeStockProject.Controllers.StockController.GetStock(Int32 productId) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeStockProject\Controllers\StockController.cs:line 47
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at PashaLifeStockProject.Middlewares.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\Majid\source\repos\PashaLifeProject\PashaLifeStockProject\Middlewares\ErrorHandlingMiddleware.cs:line 31
+2022-08-28 21:38:52.795 +04:00 [INF] Request finished in 566.127ms 200 application/json
+2022-08-28 22:03:39.460 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 22:03:39.474 +04:00 [INF] Hosting environment: Development
+2022-08-28 22:03:39.475 +04:00 [INF] Content root path: C:\Users\Majid\Desktop\StockProject\PashaLifeStockProject
+2022-08-28 22:03:39.479 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44305/weatherforecast  
+2022-08-28 22:03:39.540 +04:00 [INF] Executing endpoint 'PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject)'
+2022-08-28 22:03:39.585 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeStockProject.WeatherForecast] Get() on controller PashaLifeStockProject.Controllers.WeatherForecastController (PashaLifeStockProject).
+2022-08-28 22:03:39.593 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeStockProject.WeatherForecast[]'.
+2022-08-28 22:03:39.623 +04:00 [INF] Executed action PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject) in 32.8265ms
+2022-08-28 22:03:39.625 +04:00 [INF] Executed endpoint 'PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject)'
+2022-08-28 22:03:39.627 +04:00 [INF] Request finished in 152.5422ms 200 application/json; charset=utf-8
+2022-08-28 22:04:19.353 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-28 22:04:19.370 +04:00 [INF] Hosting environment: Development
+2022-08-28 22:04:19.371 +04:00 [INF] Content root path: C:\Users\Majid\Desktop\StockProject\PashaLifeStockProject
+2022-08-28 22:04:19.372 +04:00 [INF] Request starting HTTP/2.0 GET https://localhost:44305/weatherforecast  
+2022-08-28 22:04:19.439 +04:00 [INF] Executing endpoint 'PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject)'
+2022-08-28 22:04:19.476 +04:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[PashaLifeStockProject.WeatherForecast] Get() on controller PashaLifeStockProject.Controllers.WeatherForecastController (PashaLifeStockProject).
+2022-08-28 22:04:19.482 +04:00 [INF] Executing ObjectResult, writing value of type 'PashaLifeStockProject.WeatherForecast[]'.
+2022-08-28 22:04:19.514 +04:00 [INF] Executed action PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject) in 31.9244ms
+2022-08-28 22:04:19.516 +04:00 [INF] Executed endpoint 'PashaLifeStockProject.Controllers.WeatherForecastController.Get (PashaLifeStockProject)'
+2022-08-28 22:04:19.520 +04:00 [INF] Request finished in 153.3687ms 200 application/json; charset=utf-8
